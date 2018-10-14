@@ -5,10 +5,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Program.associate = function (models) {
-
-        Program.hasMany(models.Post, {
-            onDelete: "cascade"
-        });
+        Program.hasMany(models.Client);
+        Program.hasMany(models.Workout);
     };
 
     return Program;
