@@ -27,16 +27,16 @@ class Program extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-sm-4" key={this.props.program.id}>
+                <div className="col-xs-4" key={this.props.program.id}>
                     <Link to={"/programs/" + this.props.program.id}>{this.props.program.name}</Link>
                 </div>
-                <div className="col-sm-3">{`${this.state.clientsInProgram.length ? this.state.clientsInProgram.length : 'Loading clients...'}`}</div>
+                <div className="col-xs-3">{`${this.state.clientsInProgram.length ? this.state.clientsInProgram.length : 'Loading clients...'}`}</div>
 
-                <div className="col-sm-2">{`${this.state.clientsInProgram.length ? (((this.state.clientsInProgram.length / this.props.clients.length) * 100) + '%') : 'Loading %...'}`}</div>
-                <div className="col-sm-2">
+                <div className="col-xs-2">{`${this.state.clientsInProgram.length ? (((this.state.clientsInProgram.length / this.props.clients.length) * 100) + '%') : 'Loading %...'}`}</div>
+                <div className="col-xs-2">
                     <Link to="/settings"> <button className="btn">Assign</button></Link>
                 </div>
-                <div className="col-sm-1">Set Icon</div>
+                <div className="col-xs-1">Set Icon</div>
             </div>
         )
     }
