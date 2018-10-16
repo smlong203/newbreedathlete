@@ -23,6 +23,18 @@ module.exports = {
     },
     findAll: function (req, res) {
         models.Client.findAll({
+            include: [models.Program]
+        })
+            .then(function (clients) {
+                return res.json(clients);
+            })
+            .catch(function (error) {
+                console.log(error)
+                return res.status(500).json(error);
+            });
+    },
+    findAllByProgramId: function (req, res) {
+        models.Client.findAll({
             where: { ProgramId: req.query.ProgramId },
             include: [models.Program]
         })

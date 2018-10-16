@@ -22,6 +22,21 @@ module.exports = {
     },
     findAll: function (req, res) {
         models.Exercise.findAll({
+            include: [{
+                model: models.Workout,
+                include: [models.Program]
+            }]
+        })
+            .then(function (workouts) {
+                return res.json(workouts);
+            })
+            .catch(function (error) {
+                console.log(error)
+                return res.status(500).json(error);
+            });
+    },
+    findAllByWorkoutId: function (req, res) {
+        models.Exercise.findAll({
             where: { WorkoutId: req.query.WorkoutId },
             include: [{
                 model: models.Workout,

@@ -6,6 +6,9 @@ router.route("/")
     .get(clientsController.findAll)
     .post(clientsController.create);
 
+router.route("/Programs")
+    .get(clientsController.findAllByProgramId)
+
 // Matches with "/api/clients/:id"
 router
     .route("/:id")

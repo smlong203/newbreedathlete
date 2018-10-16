@@ -6,6 +6,9 @@ router.route("/")
     .get(workoutsController.findAll)
     .post(workoutsController.create);
 
+router.route("/Programs")
+    .get(workoutsController.findAllByProgramId)
+
 // Matches with "/api/workouts/:id"
 router
     .route("/:id")
