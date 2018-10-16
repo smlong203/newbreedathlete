@@ -1,2 +1,2 @@
-import Dashoboard from './dashboard';
-export default Dashoboard;
+import Dashboard from './dashboard';
+export default Dashboard;

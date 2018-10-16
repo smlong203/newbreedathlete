@@ -24,7 +24,6 @@ module.exports = {
             include: [{ model: models.Program }]
         })
             .then(function (workouts) {
-                console.log(workouts);
                 return res.json(workouts);
             })
             .catch(function (error) {

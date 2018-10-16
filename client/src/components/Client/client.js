@@ -1,38 +1,26 @@
 import React from 'react';
 import './client.css';
+import { Link } from "react-router-dom";
+import moment from 'moment';
+
 
 class Client extends React.Component {
-    render() {
-        return (
-            <div className="col-md-6 sm-12" >
-                <div className="jumbotron" >
-                    <h1>Clients</h1>
-                </div >
-                {/* {this.state.programs.length ? (
-              <List>
-                {this.state.programs.map(program => (
-                  <li key={program._id}>
-                    <Link to={"/programs/" + program._id}>
-                      <div>
-                        <h3>  <strong>
-                          {program.name}:
-                      </strong>
-                        </h3>
-                        <h6>
-                          {program.description}
-                        </h6>
-                      </div>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteProgram(program._id)} />
-                  </li>
-                ))}
-              </List>
-            ) : (
-                <h3>No Results to Display</h3>
-              )} */}
-            </div>
-        )
-    }
+
+  render() {
+    return (
+      <div className="row">
+        <div className="col-sm-4" >
+          <Link to={"/clients/" + this.props.client.id}>{`${this.props.client.firstname} ${this.props.client.lastname}`}</Link>
+        </div>
+        <div className="col-sm-3">{this.props.client.Program.name}</div>
+
+        <div className="col-sm-3">{moment(this.props.client.createdAt).format("MM/DD/YYYY")}</div>
+        <div className="col-sm-2">
+          <Link to="/settings"> <button className="btn">Set Icon</button></Link>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Client;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Programs from '../Programs';
-import Client from "../Client";
+import Clients from "../Clients";
 
 const Dashboard = (props) => {
     if (props.programs.length && props.clients.length) {
@@ -8,7 +8,7 @@ const Dashboard = (props) => {
             <div className="container container-fluid" >
                 <div className="row">
                     <Programs programs={props.programs} clients={props.clients} />
-                    <Client clients={props.clients} />
+                    <Clients clients={props.clients} />
                 </div>
 
             </div>

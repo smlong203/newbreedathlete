@@ -6,6 +6,8 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import API from "./utils/API";
 import Dashboard from './components/Dashboard';
+import Clients from './components/Clients';
+import Programs from './components/Programs';
 
 class App extends React.Component {
   state = {
@@ -57,6 +59,12 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route exact path="/" render={(props) => <Dashboard {...props} programs={this.state.programs} clients={this.state.clients} />} />
+
+            <Route exact path="/dashboard" render={(props) => <Dashboard {...props} programs={this.state.programs} clients={this.state.clients} />} />
+
+            <Route exact path="/clients" render={(props) => <Clients {...props} clients={this.state.clients} />} />
+
+            <Route exact path="/programs" render={(props) => <Programs {...props} programs={this.state.programs} clients={this.state.clients} />} />
             {/* <Route exact path="/programs" render={(props) => <Programs {...props} programs={this.state.programs} />} />
             <Route exact path="/programs/:id" component={Detail} />
             <Route component={NoMatch} /> */}
