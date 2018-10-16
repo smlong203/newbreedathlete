@@ -10,7 +10,7 @@ const Nav = () => (
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item active">
-          <Link to="/dashboard" className="nav-link">Home <span className="sr-only">(current)</span></Link>
+          <Link to="/dashboard" className="nav-link">Dashboard <span className="sr-only">(current)</span></Link>
         </li>
         <li className="nav-item">
           <Link to="/clients" className="nav-link">Clients</Link>

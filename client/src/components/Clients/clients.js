@@ -23,31 +23,9 @@ class Clients extends React.Component {
                 )) : (<h3>Loading Icon...</h3>)}
                 <div className="row client-action-btn">
                     <div className="col-sm-12">
-                        <Link to="/createClient"> <button className="btn btn-primary">Create Client</button></Link>
+                        <Link to="/newClient"> <button className="btn btn-primary">Create Client</button></Link>
                     </div>
                 </div>
-                {/* {this.state.programs.length ? (
-              <List>
-                {this.state.programs.map(program => (
-                  <li key={program._id}>
-                    <Link to={"/programs/" + program._id}>
-                      <div>
-                        <h3>  <strong>
-                          {program.name}:
-                      </strong>
-                        </h3>
-                        <h6>
-                          {program.description}
-                        </h6>
-                      </div>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteProgram(program._id)} />
-                  </li>
-                ))}
-              </List>
-            ) : (
-                <h3>No Results to Display</h3>
-              )} */}
             </div>
         )
     }

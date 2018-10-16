@@ -32,7 +32,7 @@ class Program extends React.Component {
                 </div>
                 <div className="col-sm-3">{`${this.state.clientsInProgram.length ? this.state.clientsInProgram.length : 'Loading clients...'}`}</div>
 
-                <div className="col-sm-2">{`${this.state.clientsInProgram.length ? (((this.state.clientsInProgram.length / this.props.clients.length) * 100) + '%') : 'Loading %...'}`}</div>
+                <div className="col-sm-2">{`${this.state.clientsInProgram.length ? (((this.state.clientsInProgram.length / this.props.clients.length) * 100).toFixed(0) + '%') : 'Loading %...'}`}</div>
                 <div className="col-sm-2">
                     <Link to="/settings"> <button className="btn">Assign</button></Link>
                 </div>

@@ -8,6 +8,7 @@ import API from "./utils/API";
 import Dashboard from './components/Dashboard';
 import Clients from './components/Clients';
 import Programs from './components/Programs';
+import NewClient from './components/NewClient'
 
 class App extends React.Component {
   state = {
@@ -33,7 +34,7 @@ class App extends React.Component {
     return API.getClients()
   };
 
-  componentDidMount() {
+  loadData = () => {
     let getPrograms = this.loadPrograms();
     let getWorkouts = this.loadWorkouts();
     let getExercises = this.loadExercises();
@@ -52,6 +53,10 @@ class App extends React.Component {
         console.log(err)
       })
   }
+
+  componentDidMount() {
+    this.loadData();
+  }
   render() {
     return (
       <Router>
@@ -65,9 +70,9 @@ class App extends React.Component {
             <Route exact path="/clients" render={(props) => <Clients {...props} clients={this.state.clients} />} />
 
             <Route exact path="/programs" render={(props) => <Programs {...props} programs={this.state.programs} clients={this.state.clients} />} />
-            {/* <Route exact path="/programs" render={(props) => <Programs {...props} programs={this.state.programs} />} />
-            <Route exact path="/programs/:id" component={Detail} />
-            <Route component={NoMatch} /> */}
+
+            <Route exact path="/newClient" render={(props) => <NewClient {...props} programs={this.state.programs} loadData={this.loadData} />} />
+
           </Switch>
         </div>
       </Router>
